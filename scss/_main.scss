@@ -1,0 +1,50 @@
+.section-bg {
+    background-color: $colorgrey;
+    .container {
+        @extend %size;
+        .title {
+            color: $colorwhite;
+            font-size: 30px;
+            font-family: $font01; 
+            @media (max-width: 900px) {
+                color: aqua;
+            }
+            &::after {
+                content: ' ';
+                width: 40px;
+                height: 2px;
+                background-color: $colorwhite;
+                display: block;
+                margin: 10px 0;
+            }
+        }
+        .wraper-box {
+           @include d-flex(flex,space-between,center);
+           @media (max-width: $br01) {
+                @include d-flex(flex,center, flex-start);
+           }
+           @media (max-width: $br02) {
+               flex-direction: column-reverse;
+               align-items: center;
+           }
+            img {
+               @include width(500px,100%);
+               @include  hovertransition(all,3s, ease-in);
+                &:hover {
+                    filter: grayscale(100%);
+                }
+            }
+            p {
+              width: 300px;  
+              color: $colorwhite;
+              @include hovertransition(all, 5s, linear);
+              font-family: $font01;
+                &:hover {
+                    color: red;
+                }
+            }
+        }
+    }
+}
+
+
